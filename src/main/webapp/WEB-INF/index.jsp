@@ -7,7 +7,7 @@
     <img src="resources/image/IU.jpg"/>
 </div>
 <div class="audio">
-    <audio src="resources/audio/Rollin.mp3" controls autoplay/> </audio>
+    <audio src="resources/audio/Rollin.mp3" controls/> </audio>
     <div class="rollin">
         브레이브 걸스 - 롤린
     </div>
@@ -18,10 +18,10 @@
 </div>
 
 <iframe width="600" height="600" src="https://www.youtube.com/embed/_Um8Y1KJAVI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-        style="position: relative;top: -120px;"></iframe>
+        style="position: relative;top: -120px;"></iframe> <%--여자친구 너그리고나--%>
 
 <iframe width="600" height="600" src="https://www.youtube.com/embed/3cZrxpK2EAQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-        style="position: relative;top: -120px;"></iframe>
+        style="position: relative;top: -120px;"></iframe> <%--브레이브 걸스 롤린--%>
 
 <script>
 
