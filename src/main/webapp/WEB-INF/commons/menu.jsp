@@ -13,7 +13,7 @@
         </a>
       </li>
       <li class="menu">
-        <a href="/">
+        <a href="/board">
           <p class="name">마음대로</p>
         </a>
       </li>
