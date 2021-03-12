@@ -1,0 +1,81 @@
+buildscript {
+    dependencies {
+        classpath 'com.github.fgiannesini.libsass.gradle.plugin:libsass-gradle-plugin:+'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'war'
+bootWar {
+    archiveBaseName = 'solar'
+    archiveFileName = 'solar.war'
+    archiveVersion = '1.0.0'
+}
+
+
+apply plugin: 'com.github.fgiannesini.libsass.gradle.plugin'
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io'}
+    maven { url 'https://repo.spring.io/libs-snapshot'}
+}
+
+libSassParameters {
+    inputFilePath = "src/main/resources/static/scss/board.scss"
+    outputFilePath = "src/main/resources/static/css/board.css"
+    watchedDirectoryPath = "src/main/resources/static/scss"
+    sourceMapEmbed = true
+    outputStyle "compressed"
+}
+
+dependencies {
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.session:spring-session-core'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client' // MariaDB
+    annotationProcessor 'org.projectlombok:lombok'
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.34'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    annotationProcessor("org.projectlombok:lombok")
+    compile group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.0'
+
+    compile group: 'org.apache.poi', name: 'poi', version: '4.1.2'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.2'
+
+    compile group: 'org.apache.clerezza.ext', name: 'org.json.simple', version: '0.4'
+
+    compile 'org.apache.httpcomponents:httpclient:4.5.12'
+}
+
+
+test {
+    useJUnitPlatform()
+}

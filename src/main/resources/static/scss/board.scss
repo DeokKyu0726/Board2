@@ -1,0 +1,30 @@
+.menu-container {
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .menu {
+    float: left;
+    width: 105px;
+    text-align: center;
+    margin-top: 10px;
+
+    .menu-img {
+      width: 45px;
+      height: 45px;
+    }
+
+    .name {
+      margin: 5px 0 0;
+      font-size: 13px;
+      color: #FF0000	;
+    }
+  }
+}
+.main-wrapper {
+  margin: 0 auto;
+  width: 1353px;
+  padding-top: 65px;
+  height: 713px;
+}
