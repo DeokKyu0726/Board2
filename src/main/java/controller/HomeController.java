@@ -15,6 +15,28 @@ public class HomeController {
 
 
     @RequestMapping("/board")
-    public String board() { return "/BoardFol/board";}
+    public String board() {
+        return "/BoardFol/board";
+    }
+
+    @RequestMapping("/notepad")
+    public String notepad() {
+        return "/BoardFol/notepad";
+    }
+
+    @RequestMapping("/fighting")
+    public String fighting() {
+        return "/BoardFol/fighting";
+    }
+
+    @RequestMapping("/programming")
+    public String programming() {
+        return "/BoardFol/programming";
+    }
+    @RequestMapping("/academy")
+    public String academy() {
+        return "/BoardFol/academy";
+    }
 
 }
+
