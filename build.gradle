@@ -12,8 +12,8 @@ plugins {
 
 apply plugin: 'war'
 bootWar {
-    archiveBaseName = 'solar'
-    archiveFileName = 'solar.war'
+    archiveBaseName = 'board'
+    archiveFileName = 'board.war'
     archiveVersion = '1.0.0'
 }
 
