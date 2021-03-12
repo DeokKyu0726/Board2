@@ -37,6 +37,6 @@ public class HomeController {
     public String academy() {
         return "/BoardFol/academy";
     }
-
 }
+
 

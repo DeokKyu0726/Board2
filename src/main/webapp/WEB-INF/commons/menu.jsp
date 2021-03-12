@@ -38,10 +38,38 @@
         </a>
       </li>
 
+      <div class="date">
+        <span id="date" class="txt">2020년05월15일</span>
+      </div>
+
+      <div class="date">
+        <span id="hour" class="txt">16:56:00</span>
+      </div>
+
     </div>
   </div>
 </div>
 <script>
+
+  $(function() {
+    $(document).ready(function() {
+      getDate();
+    });
+
+    window.addEventListener("beforeunload", function(e) {
+      clearInterval(setDate);
+    });
+    const setDate = setInterval(getDate, 1000);
+
+    function getDate() {
+      const date = new Date();
+      const d = date.getFullYear() + '년' + ("0" + (date.getMonth() + 1)).slice(-2) + '월' + ("0" + date.getDate()).slice(-2) + '일';
+      const h = ("0" + date.getHours()).slice(-2) + ':' + ("0" + date.getMinutes()).slice(-2) + ':' + ("0" + date.getSeconds()).slice(-2);
+      $("#date").text(d);
+      $("#hour").text(h);
+    }
+
+  });
 
 </script>
 
