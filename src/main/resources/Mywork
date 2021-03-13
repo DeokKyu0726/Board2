@@ -7,10 +7,29 @@
             4. 현재시간 및 현재날짜 추가
             5. 메인페이지, 두번째 메뉴페이지 사진 및 유튜브동영상, mp3파일 추가 후 재생확인
 
-            <3월 13일 할일 메뉴정렬 및 시간,날짜 위치정렬>
+            3월 13일 할일
+            1. 메뉴정렬 및 시간,날짜 위치정렬 (완료)
+            2. 클릭이벤트 script로 구현 클릭시 alert 메세지 띄우기 (완료)
+            3. 메뉴하나정해서 글쓰기 기능 만들기 (준완료 DB연동만 하면 완료)
+            4. DB구축(완료 table한개만 만듬 조만간 수정예정)
+            5. model,view repository만들기 (완료)
 
         2021-03-13
             1. 12일 연습삼아서 넣었던 이미지 및 유튜브링크삭제 음악재생기능 삭제
             2. 기존에 board.css에서만 css를 올릴수있었는데 build.gradle에서 Inputfilepath와 outputfilepath 코드추가후 menu.css추가
             3. 기존 메뉴위치 브라우저 가운대에 맞춘후 정렬
             4. 현재날짜, 현재시간 추가
+
+
+            etc
+               1. 3월13일 현재까지는 java쪽 view는 필요가없을꺼같음 그래서 model 및 repository만 있으면 될꺼같음 한 3월 15일 쯤 rest api까지 구축이 된다면 필요할듯..
+               2. model에 db컬럼이 들어가고 repository는 웹에 들어갈 쿼리문이 들어감
+
+
+            에러사항
+                1. invocation of init method failed nested exception is java.lang.illegalargumentexception
+                    해결방안 : 13일 이걸로 애를 먹었다 이유는 내가 바보였다 DB연결시 model 부분에 @Getter, @Setter, @Entity(name = "테이블명")을 추가를 해줘야하지만 Getter,Setter는 추가했는데 바보같이 @Entity는 추가를 안해줬다
+
+                2. Main class name has not been configured and it could not be resolved
+                    해결방안 : 기존에 내가 package를 default로 주었는데 default로 주었을시 메인클래스에서 에러가난다 해결방법으로는 pakage를 default 에서 지정을 해주면된다
+                             java소스 상단에 보면 pakage를써준다(ex: pakage com.example.myproject)

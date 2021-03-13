@@ -18,6 +18,8 @@ bootWar {
 }
 
 
+
+
 apply plugin: 'com.github.fgiannesini.libsass.gradle.plugin'
 
 group = 'org.example'
@@ -54,6 +56,7 @@ libSassParameters { // 메뉴 css
 
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
