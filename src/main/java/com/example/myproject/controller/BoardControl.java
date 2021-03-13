@@ -24,9 +24,9 @@ public class BoardControl {
     @ResponseBody
     public BoardControlView setControl(
 
-            @RequestParam(name = "title", required = true)
+            @RequestParam(name = "title", required = false)
                 String title,
-            @RequestParam(name = "content", required = true)
+            @RequestParam(name = "content", required = false)
                     String content
 
     ) {

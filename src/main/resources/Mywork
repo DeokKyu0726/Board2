@@ -10,7 +10,7 @@
             3월 13일 할일
             1. 메뉴정렬 및 시간,날짜 위치정렬 (완료)
             2. 클릭이벤트 script로 구현 클릭시 alert 메세지 띄우기 (완료)
-            3. 메뉴하나정해서 글쓰기 기능 만들기 (준완료 DB연동만 하면 완료)
+            3. 메뉴하나정해서 글쓰기 기능 만들기 (준완료 연동은 완료했지만 데이터값을 저장하면 column안에 NULL값으로 들어옴)
             4. DB구축(완료 table한개만 만듬 조만간 수정예정)
             5. model,view repository만들기 (완료)
 
@@ -19,6 +19,9 @@
             2. 기존에 board.css에서만 css를 올릴수있었는데 build.gradle에서 Inputfilepath와 outputfilepath 코드추가후 menu.css추가
             3. 기존 메뉴위치 브라우저 가운대에 맞춘후 정렬
             4. 현재날짜, 현재시간 추가
+            5. 웹 과 DB연동
+            6. DB 구축
+
 
 
             etc
@@ -33,3 +36,10 @@
                 2. Main class name has not been configured and it could not be resolved
                     해결방안 : 기존에 내가 package를 default로 주었는데 default로 주었을시 메인클래스에서 에러가난다 해결방법으로는 pakage를 default 에서 지정을 해주면된다
                              java소스 상단에 보면 pakage를써준다(ex: pakage com.example.myproject)
+
+                3. Required String parameter (저장내용 DB업로드시 에러)
+                    해결방안 : DB와 연동하는 controller안에 required값을 true에서 false로 바꿔서 해결 (하지만 이방법에 대해서는 조금더 공부를 해야할꺼같다, required=true는 파라메타를 필수적으로 받아야한다
+                              false시 값이 없어도 저장이된다 게시판은 값이 들어와서 저장을 해야함으로 여기서는 true값이 들어가야한다)
+
+                4. You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(' at line 1 (실수중에 제일 ㅄ같은 실수였다)
+                    해결방안 : repository에 들어가는 쿼리문중에 value = "INSERT INTO board (title, content) VALUES (?1, ?2)" 부분에서 ?2옆에 "," 이게들어가서 에러가 났다 ㅄ이다 눈뽑히는줄알았다......

@@ -16,7 +16,7 @@ public interface Boardrepository extends JpaRepository<Board, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO board (title, content) VALUES (?1, ?2,)", nativeQuery=true)
+    @Query(value = "INSERT INTO board (title, content) VALUES (?1, ?2)", nativeQuery=true)
     int setControl(String title, String content);
 
 

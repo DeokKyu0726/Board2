@@ -6,8 +6,8 @@
  <div class = menu>
    <ul> <%--class 명에 fm은 메뉴 ID임--%>
        <a href="/"> <img src="resources/image/logo.png" style="width: 100px; float: left;cursor: pointer"></a>
-     <li><a class="fm" href="/board">시작</a></li>
-     <li><a class="fm" href="/notepad">연습장</a></li>
+     <li><a class="fm" href="/board">클릭</a></li>
+     <li><a class="fm" href="/notepad">DB</a></li>
      <li><a class="fm" href="/fighting">화이팅</a></li>
      <li><a class="fm" href="/programming">프로그래밍</a></li>
      <li><a class="fm" href="/academy">학원</a></li>
