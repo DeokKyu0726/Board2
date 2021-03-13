@@ -1,54 +1,26 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 
 <script src="resources/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/resources/css/solar.css" />
-<div class="menu-wrapper">
-  <div class="sections clearfix">
+<link rel="stylesheet" type="text/css" href="/resources/css/menu.css" />
+
+ <div class = menu>
+   <ul> <%--class 명에 fm은 메뉴 ID임--%>
+       <a href="/"> <img src="resources/image/logo.png" style="width: 100px; float: left;cursor: pointer"></a>
+     <li><a class="fm" href="/board">시작</a></li>
+     <li><a class="fm" href="/notepad">연습장</a></li>
+     <li><a class="fm" href="/fighting">화이팅</a></li>
+     <li><a class="fm" href="/programming">프로그래밍</a></li>
+     <li><a class="fm" href="/academy">학원</a></li>
+       <li><a class="fm"> <span id="date" class="txt">2020년05월15일</span>
+           <span id="hour" class="txt">2020년05월15일</span></a></li>
+   </ul>
+ </div>
 
 
-    <div class="menu-container">
-      <li class="menu">
-        <a href="/">
-          <p class="name">시작</p>
-        </a>
-      </li>
-      <li class="menu">
-        <a href="/board">
-          <p class="name">게시판</p>
-        </a>
-      </li>
-      <li class="menu">
-        <a href="/notepad">
-          <p class="name">연습장</p>
-        </a>
-      </li>
-      <li class="menu">
-        <a href="/fighting">
-          <p class="name">화이팅</p>
-        </a>
-      </li>
-      <li class="menu">
-        <a href="/programming">
-          <p class="name">프로그래밍</p>
-        </a>
-      </li>
-      <li class="menu">
-        <a href="/academy">
-          <p class="name">학원</p>
-        </a>
-      </li>
 
-      <div class="date">
-        <span id="date" class="txt">2020년05월15일</span>
-      </div>
 
-      <div class="date">
-        <span id="hour" class="txt">16:56:00</span>
-      </div>
 
-    </div>
-  </div>
-</div>
+
 <script>
 
   $(function() {

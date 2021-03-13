@@ -36,13 +36,22 @@ repositories {
     maven { url 'https://repo.spring.io/libs-snapshot'}
 }
 
-libSassParameters {
+libSassParameters { // 게시판 css
     inputFilePath = "src/main/resources/static/scss/board.scss"
     outputFilePath = "src/main/resources/static/css/board.css"
     watchedDirectoryPath = "src/main/resources/static/scss"
     sourceMapEmbed = true
     outputStyle "compressed"
 }
+
+libSassParameters { // 메뉴 css
+    inputFilePath = "src/main/resources/static/scss/menu.scss"
+    outputFilePath = "src/main/resources/static/css/menu.css"
+    watchedDirectoryPath = "src/main/resources/static/scss"
+    sourceMapEmbed = true
+    outputStyle "compressed"
+}
+
 
 dependencies {
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
