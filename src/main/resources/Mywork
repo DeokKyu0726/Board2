@@ -30,16 +30,16 @@
 
 
             에러사항
-                1. invocation of init method failed nested exception is java.lang.illegalargumentexception
+                1. 에러코드 : invocation of init method failed nested exception is java.lang.illegalargumentexception
                     해결방안 : 13일 이걸로 애를 먹었다 이유는 내가 바보였다 DB연결시 model 부분에 @Getter, @Setter, @Entity(name = "테이블명")을 추가를 해줘야하지만 Getter,Setter는 추가했는데 바보같이 @Entity는 추가를 안해줬다
 
-                2. Main class name has not been configured and it could not be resolved
+                2. 에러코드 :  Main class name has not been configured and it could not be resolved
                     해결방안 : 기존에 내가 package를 default로 주었는데 default로 주었을시 메인클래스에서 에러가난다 해결방법으로는 pakage를 default 에서 지정을 해주면된다
                              java소스 상단에 보면 pakage를써준다(ex: pakage com.example.myproject)
 
-                3. Required String parameter (저장내용 DB업로드시 에러)
+                3. 에러코드 :  Required String parameter (저장내용 DB업로드시 에러)
                     해결방안 : DB와 연동하는 controller안에 required값을 true에서 false로 바꿔서 해결 (하지만 이방법에 대해서는 조금더 공부를 해야할꺼같다, required=true는 파라메타를 필수적으로 받아야한다
                               false시 값이 없어도 저장이된다 게시판은 값이 들어와서 저장을 해야함으로 여기서는 true값이 들어가야한다)
 
-                4. You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(' at line 1 (실수중에 제일 ㅄ같은 실수였다)
+                4. 에러코드 :  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(' at line 1 (실수중에 제일 ㅄ같은 실수였음)
                     해결방안 : repository에 들어가는 쿼리문중에 value = "INSERT INTO board (title, content) VALUES (?1, ?2)" 부분에서 ?2옆에 "," 이게들어가서 에러가 났다 ㅄ이다 눈뽑히는줄알았다......
