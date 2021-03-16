@@ -14,7 +14,7 @@ public class HomeController {
     }
 
 
-    @RequestMapping("/sex")
+    @RequestMapping("/board")
     public String board() {
         return "/BoardFol/board";
     }
