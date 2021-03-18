@@ -5,16 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity(name = "offices")
-public class Test {
+public class Test  {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name = "officecode")
-    private String officecode;
+    private Long officecode;
 
     @Column(name = "city")
     private String city;
