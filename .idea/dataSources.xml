@@ -7,7 +7,7 @@
       <imported>true</imported>
       <remarks>Hibernate</remarks>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mariadb://127.0.0.1/kk</jdbc-url>
+      <jdbc-url>jdbc:mariadb://127.0.0.1/testapi</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -43,3 +43,6 @@
 
                 4. 에러코드 :  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(' at line 1 (실수중에 제일 ㅄ같은 실수였음)
                     해결방안 : repository에 들어가는 쿼리문중에 value = "INSERT INTO board (title, content) VALUES (?1, ?2)" 부분에서 ?2옆에 "," 이게들어가서 에러가 났다 ㅄ이다 눈뽑히는줄알았다......
+
+                5. 에러코드 : Unknown column 'test0_.office_code' in 'field list'
+                    해결방안 : model 쪽 컬럼이름을 확인해보자
