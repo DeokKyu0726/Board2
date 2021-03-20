@@ -21,5 +21,11 @@
                 center: jeju
             });
 
+        new google.maps.Marker({
+            position:jeju,
+            map : map,
+            label: "제주공항"
+        })
+
     }
 </script>

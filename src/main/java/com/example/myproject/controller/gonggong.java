@@ -18,7 +18,7 @@ public class gonggong {
         StringBuffer result = new StringBuffer();
 
         try{
-            String urlstr ="https://open.jejudatahub.net/api/proxy/Dtb18ta1btbD1Da1a81aaDttab6tDabb/teot5ocr5t1t5t5_0_t55t5jop2r5j0t";
+            String urlstr ="https://open.jejudatahub.net/api/proxy/Dtb18ta1btbD1Da1a81aaDttab6tDabb/teot5ocr5t1t5t5_0_t55t5jop2r5j0t?addressDetail=";
 
             URL url = new URL(urlstr);
 
