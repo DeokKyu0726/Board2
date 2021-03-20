@@ -5,37 +5,36 @@
 <jsp:include page="/WEB-INF/commons/menu.jsp"/>
 
 
-<div id="map">
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback=initMap"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback=initMap&region=kr"></script>
+
+<p>구글맵</p>
+
+<div id = "mapdiv">
+    <div id="map"></div>
+</div>
+
+<input type="text" class="form-control form-join" id="address">
+<button name="subject" class="btn btn-sucess" id="btn-mapchange" value="ssss">지도변경</button>
+<br><br>
+
+
 
 <script>
 
+function initmap(){
+    var latitude = 37.566536;
+    var longitude = 126.97797;
 
-    function showmap(){
-        var e = document.getElementById('map');
-        new google.maps.Map(e, {center:{lat:37.562161, lng:127.035199}, zoom:14})
-
-    }
-    function  showMarker(){
-        var e = document.getElementById('map');
-
-        var jeju= new google.maps.LatLng(37.562161, 127.035199);
-
-        var opts= {
+    var seoul = {lat: latitude,lng: longitude};
+    var map = new google.maps.map(document.getElementById('map'),
+        {
             center: jeju,
-            zoom: 14
-        }
+            zoom: 15
+        });
 
-
-        new google.maps.Map(e,opts);
-    }
-
-
+    console.log("sdsadasdsa");
+}
 
 </script>
-
-
-
-
-
