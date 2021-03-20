@@ -38,13 +38,22 @@ repositories {
     maven { url 'https://repo.spring.io/libs-snapshot'}
 }
 
-libSassParameters { // 게시판 css
+libSassParameters { // 서귀포 css
     inputFilePath = "src/main/resources/static/scss/board.scss"
     outputFilePath = "src/main/resources/static/css/board.css"
     watchedDirectoryPath = "src/main/resources/static/scss"
     sourceMapEmbed = true
     outputStyle "compressed"
 }
+
+libSassParameters { // 제주 css
+    inputFilePath = "src/main/resources/static/scss/jejusi/jejusi.scss"
+    outputFilePath = "src/main/resources/static/css/jejusi/jejusi.css"
+    watchedDirectoryPath = "src/main/resources/static/scss"
+    sourceMapEmbed = true
+    outputStyle "compressed"
+}
+
 
 libSassParameters { // 메뉴 css
     inputFilePath = "src/main/resources/static/scss/menu.scss"
