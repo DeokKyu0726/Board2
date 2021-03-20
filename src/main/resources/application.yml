@@ -2,7 +2,7 @@ spring:
   datasource:
 
 # 데이터베이스 순서대로 주소, 아이디, 비밀번호
-    url: jdbc:mariadb://127.0.0.1/myproject
+    url: jdbc:mariadb://127.0.0.1/jeju
     username: root
     password: root
 
