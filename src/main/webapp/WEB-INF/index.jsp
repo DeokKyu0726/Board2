@@ -7,34 +7,19 @@
 
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback=initMap&region=kr"></script>
 
-<p>구글맵</p>
+<div id="map" style="width:100%; height: 100vh;">
 
-<div id = "mapdiv">
-    <div id="map"></div>
 </div>
-
-<input type="text" class="form-control form-join" id="address">
-<button name="subject" class="btn btn-sucess" id="btn-mapchange" value="ssss">지도변경</button>
-<br><br>
-
-
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback&callback=initMap&region=kr"></script>
 <script>
+    function initMap() {
+        var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+                zoom: 12,
+                center: seoul
+            });
 
-function initmap(){
-    var latitude = 37.566536;
-    var longitude = 126.97797;
-
-    var seoul = {lat: latitude,lng: longitude};
-    var map = new google.maps.map(document.getElementById('map'),
-        {
-            center: jeju,
-            zoom: 15
-        });
-
-    console.log("sdsadasdsa");
-}
-
+    }
 </script>
