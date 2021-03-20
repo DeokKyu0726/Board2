@@ -13,29 +13,14 @@ public class HomeController {
         return "index";
     }
 
-
-    @RequestMapping("/board")
-    public String board() {
-        return "/BoardFol/board";
-    }
-
-    @RequestMapping("/notepad")
-    public String notepad() {
-        return "/BoardFol/notepad";
-    }
-
-    @RequestMapping("/fighting")
+    @RequestMapping("/seogwipo")
     public String fighting() {
-        return "/BoardFol/fighting";
+        return "/SeogwipoFol/seogwipo";
     }
 
-    @RequestMapping("/programming")
+    @RequestMapping("/jejusi")
     public String programming() {
-        return "/BoardFol/programming";
-    }
-    @RequestMapping("/academy")
-    public String academy() {
-        return "/BoardFol/academy";
+        return "/JejusiFol/jejusi";
     }
 }
 

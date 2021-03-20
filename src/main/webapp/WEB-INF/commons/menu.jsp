@@ -6,11 +6,8 @@
  <div class = menu>
    <ul> <%--class 명에 fm은 메뉴 ID임--%>
        <a href="/"> <img src="resources/image/logo.png" style="width: 100px; float: left;cursor: pointer"></a>
-     <li><a class="fm" href="/board">클릭</a></li>
-     <li><a class="fm" href="/notepad">DB</a></li>
-     <li><a class="fm" href="/fighting">검색</a></li>
-     <li><a class="fm" href="/programming">전적</a></li>
-     <li><a class="fm" href="/academy">학원</a></li>
+     <li><a class="fm" href="/jejusi">제주시</a></li>
+     <li><a class="fm" href="/seogwipo">서귀포시</a></li>
        <li><a class="fm"> <span id="date" class="txt">2020년05월15일</span>
            <span id="hour" class="txt">2020년05월15일</span></a></li>
    </ul>

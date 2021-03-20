@@ -4,12 +4,8 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/board.css"/>
 <jsp:include page="/WEB-INF/commons/menu.jsp"/>
 
-</div>
-
 
 <script>
-
-
 
 
 </script>
