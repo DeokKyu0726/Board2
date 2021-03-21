@@ -43,3 +43,10 @@
 
                 4. 에러코드 :  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(' at line 1 (실수중에 제일 ㅄ같은 실수였음)
                     해결방안 : repository에 들어가는 쿼리문중에 value = "INSERT INTO board (title, content) VALUES (?1, ?2)" 부분에서 ?2옆에 "," 이게들어가서 에러가 났다 ㅄ이다 눈뽑히는줄알았다......
+
+
+                5. 에러코드 : query did not return a unique result (reposit과 controller에 쿼리오류)
+                    해결방안 : 쿼리를 다시 찾아보고 쓴다
+
+                6. 에러코드 : cannot parse data in timestamp string (데이터 타입오류)
+                    해결방안 : 이런실수는 하지말자 DB에는 String으로 정했지만 model 에서 병신같이 date형으로 표기를 해줬다 
