@@ -49,4 +49,4 @@
                     해결방안 : 쿼리를 다시 찾아보고 쓴다
 
                 6. 에러코드 : cannot parse data in timestamp string (데이터 타입오류)
-                    해결방안 : 이런실수는 하지말자 DB에는 String으로 정했지만 model 에서 병신같이 date형으로 표기를 해줬다 
+                    해결방안 : 이런실수는 하지말자 DB에는 String으로 정했지만 model 에서 병신같이 date형으로 표기를 해줬다
