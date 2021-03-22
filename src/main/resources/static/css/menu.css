@@ -1,3 +1,43 @@
-.menu{height:40px;width:1000px;margin-left:auto;margin-right:auto;text-decoration:none}.menu ul li{list-style:none;color:green;float:left;line-height:35px;vertical-align:middle;text-align:center;margin:0 36px}a{color:black}a:hover{background-color:chocolate}a:active{background-color:crimson}a:visited{color:blue}
+.menu {
+    height: 8%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    background-color: #2991D0;
+
+}
+
+.menu ul li {
+    list-style: none;
+    color: green;
+    float: left;
+    /*line-height: 35px;*/
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 36px
+}
+
+.fm{
+    /*font-family: "Bauhaus 93";*/
+    font-size: 3em;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: chocolate
+}
+
+a:active {
+    background-color: crimson
+}
+
+a:visited {
+    color: white;
+}
 
 /*# sourceMappingURL=data:application/json;base64,ewoJInZlcnNpb24iOiAzLAoJImZpbGUiOiAic3JjL21haW4vcmVzb3VyY2VzL3N0YXRpYy9jc3MvbWVudS5jc3MiLAoJInNvdXJjZXMiOiBbCgkJInNyYy9tYWluL3Jlc291cmNlcy9zdGF0aWMvc2Nzcy9tZW51LnNjc3MiLAoJCSJzcmMvbWFpbi9yZXNvdXJjZXMvc3RhdGljL3Njc3MvbWVudS5zY3NzL0pTQVNTX0NVU1RPTS5zY3NzIgoJXSwKCSJuYW1lcyI6IFtdLAoJIm1hcHBpbmdzIjogIkFBQUEsQUFBQSxLQUFLLEFBQUEsQ0FDSCxNQUFNLENBQUUsSUFBSSxDQUNaLEtBQUssQ0FBRSxNQUFNLENBQ2IsV0FBVyxDQUFFLElBQUksQ0FDakIsWUFBWSxDQUFFLElBQUksQ0FDbEIsZUFBZSxDQUFFLElBQUksQ0FDdEIsQUFFRCxBQUFTLEtBQUosQ0FBQyxFQUFFLENBQUMsRUFBRSxBQUFBLENBQ1QsVUFBVSxDQUFFLElBQUksQ0FDaEIsS0FBSyxDQUFFLEtBQUssQ0FDWixLQUFLLENBQUUsSUFBSSxDQUNYLFdBQVcsQ0FBRSxJQUFJLENBQ2pCLGNBQWMsQ0FBRSxNQUFNLENBQ3RCLFVBQVUsQ0FBRSxNQUFNLENBQ2xCLE1BQU0sQ0FBRSxNQUFNLENBQ2YsQUFDQyxBQUFBLENBQUMsQUFBQSxDQUNDLEtBQUssQ0FBRSxLQUFLLENBQ2IsQUFDRCxBQUFBLENBQUMsQUFBQSxNQUFNLEFBQUEsQ0FDTCxnQkFBZ0IsQ0FBRSxTQUFTLENBQzVCLEFBQ0QsQUFBQSxDQUFDLEFBQUEsT0FBTyxBQUFBLENBQ04sZ0JBQWdCLENBQUUsT0FBTyxDQUMxQixBQUNELEFBQUEsQ0FBQyxBQUFBLFFBQVEsQUFBQSxDQUNQLEtBQUssQ0FBRSxJQUFJLENBQ1oiCn0= */
