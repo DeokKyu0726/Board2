@@ -7,19 +7,33 @@
 
 
 <style>
-    #nav { font-family:'arial'; margin-top: 10px; margin-bottom: 10px;}
+    #nav { font-family:'arial'; margin-top: 10px;}
     #nav ul{ width:100%; margin:0; padding:0; }
     #nav ul.city_menu li{ float:left; width:100%; list-style-type:none; font-size:30px;}
     #nav ul.city_menu li a{ color: black;}
 </style>
 
-<div id="nav" style=" width:100%">
+<div id="nav" style="width:100%">
     <ul class="city_menu">
-        <li><a href="#">서귀포시</a>
+        <li><a href="#">동 선택</a>
             <ul class="sub">
-                <li><a href="#">SUB MENU 2-1</a></li>
-                <li><a href="#">SUB MENU 2-2</a></li>
-                <li><a href="#">SUB MENU 2-3</a></li>
+                <li><a href="#">Anduck-myun</a></li>
+                <li><a href="#">Cheunji-dong</a></li>
+                <li><a href="#">Deacheon-dong</a></li>
+                <li><a href="#">Deajeong-eub</a></li>
+                <li><a href="#">Dearyun-dong</a></li>
+                <li><a href="#">Donghong-dong</a></li>
+                <li><a href="#">Hyodon-dong</a></li>
+                <li><a href="#">Jeongbang-dong</a></li>
+                <li><a href="#">Jongang-dong</a></li>
+                <li><a href="#">Joongmoon-dong</a></li>
+                <li><a href="#">Namwon-eub</a></li>
+                <li><a href="#">Pyoseon-myun</a></li>
+                <li><a href="#">Seohong-dong</a></li>
+                <li><a href="#">Seongsan-eub</a></li>
+                <li><a href="#">Songsan-dong</a></li>
+                <li><a href="#">Yearea-dong</a></li>
+                <li><a href="#">Yeongcheon-dong</a></li>
             </ul>
         </li>
     </ul>
@@ -36,7 +50,7 @@
     });
 </script>
 
-<div id="map" style=" width:100%; height: 70%;"></div>
+<div id="map" style=" width:100%; height: 80%;"></div>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback&callback=initMap&region=kr"></script>
 <script>
@@ -53,8 +67,6 @@
             map : map,
             label: "제주공항"
         })
-
-
 
     }
 </script>

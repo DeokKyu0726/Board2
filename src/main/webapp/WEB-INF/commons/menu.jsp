@@ -4,13 +4,12 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/menu.css" />
 
 <div class=menu>
-    <a href="/"> <img src="resources/image/logo_1.png" style="height:100%; float: left; cursor: pointer"></a>
-    <ul style="margin-left: 0px"> <%--class 명에 fm은 메뉴 ID임--%>
-        <li><a class="fm" href="/jejusi">제주시</a></li>
-        <li><a class="fm" href="/seogwipo">서귀포시</a></li>
-<%--        <li><a class="fm"> <span id="date" class="txt">2020년05월15일</span>--%>
-<%--            <span id="hour" class="txt">2020년05월15일</span></a></li>--%>
-    </ul>
+    <a href="/"> <img src="resources/image/logo_1.png" style="height:100%; cursor: pointer"></a>
+</div>
+
+<div class=sub_menu><%--class 명에 fm은 메뉴 ID임--%>
+    <a class="fm" href="/jejusi" >제주시</a>
+    <a class="fm" href="/seogwipo">서귀포시</a>
 </div>
 
 
