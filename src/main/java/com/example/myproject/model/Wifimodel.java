@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Entity(name = "wifi")
+@Entity(name = "seogwipo")
 public class Wifimodel {
 
     @Id
