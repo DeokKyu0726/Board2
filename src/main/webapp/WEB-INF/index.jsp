@@ -35,11 +35,11 @@
 
       try
       {
-            String jdbcDriver = "jdbc:mariadb://127.0.0.1/jeju";
+            String jdbcDriver = "jdbc:mariadb://127.0.0.1/wifi";
             String dbUser = "root";
             String dbPass = "root";
 
-            String query = "select * from wifi order by INX";
+            String query = "select * from jeju order by INX";
             // 2. 데이터베이스 커넥션 생성
             conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
             // 3. Statement 생성

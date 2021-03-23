@@ -73,7 +73,6 @@
     var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 
-
     /*----------------------------------------------------------%%%%아래서부터 주석이 끝나는 부분까지는 현재위치를 표시하는 기능임 이건  릴리즈시 주석해제%%%%%%%%%%%%*-----------------------------------------/
     // //현재위치
     // // HTML5의 geolocation으로 사용할 수 있는지 확인합니다
@@ -159,7 +158,6 @@
             title: '<%= rs.getString("PLACE") %>',
             latlng: new kakao.maps.LatLng(<%= rs.getString("LATITUDE") %>,<%= rs.getString("LONGTITUDE") %>)
         },
-
         <%
      }
  }catch(SQLException ex){
@@ -174,14 +172,9 @@
      if(conn != null) try { conn.close(); } catch(SQLException ex) {}
  }
 %>
-
     ];
-
-
-
     // 마커 이미지의 이미지 주소입니다
     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-
     for (var i = 0; i < positions.length; i ++) {
 
         // 마커 이미지의 이미지 크기 입니다
@@ -194,22 +187,17 @@
         var marker = new kakao.maps.Marker({
             map: map, // 마커를 표시할 지도
             position: positions[i].latlng, // 마커를 표시할 위치
-            title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            image : markerImage // 마커 이미지
+            title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            image: markerImage, // 마커 이미지
+            clickable: true
         });
 
-        // 마커에 표시할 인포윈도우를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({
             content: positions[i].content // 인포윈도우에 표시할 내용
         });
-
-        // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-        // 이벤트 리스너로는 클로저를 만들어 등록합니다
-        // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
         kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
     }
-
     // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
     function makeOverListener(map, marker, infowindow) {
         return function() {
@@ -222,7 +210,12 @@
         return function() {
             infowindow.close();
         };
+
     }
+
+
+
+
 </script>
 
 

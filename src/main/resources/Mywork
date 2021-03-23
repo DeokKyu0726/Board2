@@ -1,32 +1,26 @@
 날짜별 코드수정사항
 
-        2021-03-12
-            1. 작업 환경구성 및 프로젝트생성
-            2. 컨트롤러 추가후 컨트롤러에서 jsp호출하는 기능추가
-            3. 메뉴에 각링크 만든후 연결확인
-            4. 현재시간 및 현재날짜 추가
-            5. 메인페이지, 두번째 메뉴페이지 사진 및 유튜브동영상, mp3파일 추가 후 재생확인
 
-            3월 13일 할일
-            1. 메뉴정렬 및 시간,날짜 위치정렬 (완료)
-            2. 클릭이벤트 script로 구현 클릭시 alert 메세지 띄우기 (완료)
-            3. 메뉴하나정해서 글쓰기 기능 만들기 (준완료 연동은 완료했지만 데이터값을 저장하면 column안에 NULL값으로 들어옴)
-            4. DB구축(완료 table한개만 만듬 조만간 수정예정)
-            5. model,view repository만들기 (완료)
 
-        2021-03-13
-            1. 12일 연습삼아서 넣었던 이미지 및 유튜브링크삭제 음악재생기능 삭제
-            2. 기존에 board.css에서만 css를 올릴수있었는데 build.gradle에서 Inputfilepath와 outputfilepath 코드추가후 menu.css추가
-            3. 기존 메뉴위치 브라우저 가운대에 맞춘후 정렬
-            4. 현재날짜, 현재시간 추가
-            5. 웹 과 DB연동
-            6. DB 구축
+        2021-03-24
+            1. 구글지도에서 -> 카카오맵으로 변경 (변경사유 : 한국인이 사용하기 너무 까다로움)
+
+            2. 구글맵 api에서 여러가지 기능 추가
+                현재 추가사항 : 마우스 올릴시 이벤트 이거 클릭으로 바꿀예정 3.25까지 예정
+                              사용자 현재 실시간위치표시 현재는 주석처리해놓았지만 릴리즈시 주석해제예정
+            3. jsp에서 db에 쿼리를 날려 위치정보Column인 PLACE와 위도Column인 LATITUDE와 경도Column인 LONGTITUDE 를 가져와서 좌표에 핀을찍음
+                실력을 업해서 이걸 java에서 객체를 생성해 가져와보자
+
+            4. 웹을 app으로 변경 이건 현재 css수정이 필요하다
+
 
 
 
             etc
-               1. 3월13일 현재까지는 java쪽 view는 필요가없을꺼같음 그래서 model 및 repository만 있으면 될꺼같음 한 3월 15일 쯤 rest api까지 구축이 된다면 필요할듯..
-               2. model에 db컬럼이 들어가고 repository는 웹에 들어갈 쿼리문이 들어감
+               1. 메인메뉴 수정
+               2. app으로 변경시 너무 허전함
+               3. 여러가지 메뉴를 추가했으면 좋겠음
+               4. 마우스클릭시 위치정보 표시기능 추가 (이건 얼마 걸리지 않을꺼같음)
 
 
             에러사항
@@ -50,3 +44,19 @@
 
                 6. 에러코드 : cannot parse data in timestamp string (데이터 타입오류)
                     해결방안 : 이런실수는 하지말자 DB에는 String으로 정했지만 model 에서 병신같이 date형으로 표기를 해줬다
+
+                7. 에러코드 : Uncaught SyntaxError: missing ) after argument list (쿼리를 잘못보냄)
+                    해결방안 : 처음에 select * from 테이블명 order by inx 로 날렸다 이건 데이터를 조회후 정렬하는 쿼리이다 결국 전부다 가져오는 코드이다
+                              그래서 쿼리를 바꿔서 보냈다 select 컬럼,컬럼,컬럼 from 테이블;
+
+                8. 에러코드 : is exceeding the 65535 bytes limit (65535bytes 를 초과했다 최대 jsp바이트수는 65535이다)
+                    해결방안 : 멍청하게 하드코딩을 안하려고 db를 가져왔는데 하드코딩을 했다
+                            {
+                                content: '<%= rs.getString("PLACE") %>',
+                                title: '<%= rs.getString("PLACE") %>',
+                                latlng: new kakao.maps.LatLng(<%= rs.getString("LATITUDE") %>,<%= rs.getString("LONGTITUDE") %>)
+                            }, 이걸 DB의 인덱스 수만큼 복사를 했다 이건 정말 바보같은 짓이였다
+
+                9. 에러코드 : context with path [] threw exception [An exception occurred processing
+                    해결방안 : connetion 을 확인해보자
+
