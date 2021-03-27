@@ -7,7 +7,7 @@
     <a href="/"> <img src="resources/image/logo_1.png" style="height:100%; cursor: pointer"></a>
 </div>
 
-<div class=sub_menu><%--class 명에 fm은 메뉴 ID임--%>
+<div class=sub_menu><%--class 명에  fm은 메뉴 ID임--%>
     <a class="fm" href="/jejusi" >제주시</a>
     <a class="fm" href="/seogwipo">서귀포시</a>
 </div>
