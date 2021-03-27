@@ -27,14 +27,6 @@
         $('.hamburger-icon').click(function () {
             $('.sub_menu').addClass("open");
         });
-
-<<<<<<< HEAD
     });
-=======
-
-
-
-
->>>>>>> d86222bf4d79309a799a48bb232d420e05c21921
 </script>
 
