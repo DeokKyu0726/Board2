@@ -22,7 +22,7 @@
 <div id="nav" style="width:100%">
     <ul class="city_menu">
         <form>
-            <li><a href="#">동 선택</a>
+            <li><a href="#"></a>
                 <select class="sub">
                     <option><a href="#">안덕면</a></option>
                     <option><a href="#">천지동</a></option>
