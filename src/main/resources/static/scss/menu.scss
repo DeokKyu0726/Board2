@@ -71,16 +71,22 @@
 }
 
 .sub_menu {
-  height: 4%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-decoration: none;
+  position: fixed;
+  top: 0;
+  left: -30%;
+  z-index: 4;
+  height: 100%;
+  width: 30%;
   background-color: #2991d0;
   text-align: center;
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
 }
-
-
+.open{
+  left: 0px;
+}
 
 
 .fm{
@@ -99,6 +105,7 @@ a:visited {
 }
 
 html {
+  margin-top: 0;
   /* Prevent font scaling in landscape */
   -webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
   -moz-text-size-adjust: none; /*Firefox*/
