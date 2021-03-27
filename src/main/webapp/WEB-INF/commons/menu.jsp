@@ -15,8 +15,9 @@
 </div>
 
 <div class=sub_menu>
+        <div class="close-icon"> X</div>
     <ul>
-        <li><a class="fm" href="/jejusi" >제주시</a></li>
+        <li><a class="fm" href="/jejusi">제주시</a></li>
         <li><a class="fm" href="/seogwipo">서귀포시</a></li>
     </ul>
 </div>
@@ -26,6 +27,10 @@
         /*햄버거 메뉴 클릭 */
         $('.hamburger-icon').click(function () {
             $('.sub_menu').addClass("open");
+        });
+
+        $('.close-icon').click(function () {
+            $('.sub_menu').removeClass("open");
         });
     });
 </script>
