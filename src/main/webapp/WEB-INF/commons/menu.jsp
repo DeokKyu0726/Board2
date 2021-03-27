@@ -15,6 +15,10 @@
     <a class="fm" href="/seogwipo">서귀포시</a>
 </div>
 
+<div class="search">
+    <input type="text" name="search" placeholder="장소,주소 검색">
+</div>
+
 <%--<div class=sub_menu>&lt;%&ndash;class 명에 fm은 메뉴 ID임&ndash;%&gt;--%>
 <%--    <a class="fm" href="/jejusi" >제주시</a>--%>
 <%--    <a class="fm" href="/seogwipo">서귀포시</a>--%>
