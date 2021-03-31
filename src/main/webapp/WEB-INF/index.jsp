@@ -14,6 +14,10 @@
 
 <div id="map" style=" width:100%; height: 93%;"></div>
 
+<div class="main-img">
+    <img src="resources/image/main.png "style="background-repeat: repeat">
+</div>
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=823225c9f117d22aaa31fc6556d5bca7"></script>
 
 <script>
