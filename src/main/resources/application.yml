@@ -1,24 +1,12 @@
 spring:
   datasource:
-
-# 데이터베이스 순서대로 주소, 아이디, 비밀번호
-    url: jdbc:mariadb://127.0.0.1/wifi
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1?useSSL=false
     username: root
     password: root
 
-    driver-class-name: org.mariadb.jdbc.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    properties:
-      hibernate:
-        format_sql: true
-        ddl-auto: none
-        temp:
-          use_jdbc_metadata_defaults: false
-    generate-ddl: false
-    show-sql: false
-  devtools:
-    livereload:
-      enabled: true
-  freemarker:
-    cache: false
+
+
+
+
+
