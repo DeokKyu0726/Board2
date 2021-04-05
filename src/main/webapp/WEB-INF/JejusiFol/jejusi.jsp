@@ -7,7 +7,7 @@
 <%@ page import = "java.sql.SQLException" %>
 
 <script src="resources/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/resources/css/board.css"/>
+<link rel="stylesheet" type="text/css" href="/resources/css/wifi.css"/>
 <jsp:include page="/WEB-INF/commons/menu.jsp"/>
 
 
