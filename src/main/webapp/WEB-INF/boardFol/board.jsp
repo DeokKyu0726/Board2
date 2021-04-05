@@ -20,8 +20,18 @@
 </div>
 
 <table class="board" border="1">
+
+    <colgroup>
+        <col width="50"/>
+        <col width="300"/>
+        <col width="80"/>
+        <col width="100"/>
+        <col width="70"/>
+    </colgroup>
+
     <thead>
     <tr>
+        <th>번호</th>
         <th>제목</th>
         <th>글쓴이</th>
         <th>날짜</th>
@@ -30,9 +40,10 @@
 
     <tbody>
     <tr>
-        <td class="title"> 게시판 제목</td>
-        <td class="name"> 글쓴이</td>
-        <td class="date"> 날짜</td>
+        <td class="index">0</td>
+        <td class="title">게시판 제목</td>
+        <td class="name">글쓴이</td>
+        <td class="date">날짜</td>
     </tr>
     </tbody>
 </table>
