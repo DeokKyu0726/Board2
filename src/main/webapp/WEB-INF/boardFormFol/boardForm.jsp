@@ -51,6 +51,9 @@
     <tr>
         <th class="th" scope="row">이메일</th>
         <td><input type="text" id="EMAIL" class="email" title="이메일" placeholder="email please"></td>
+=======
+        <td><input type="text" class="email" title="이메일" placeholder="이메일을 입력해주세요"></td>
+>>>>>>> 9df26ddd832f7a249f398a50eb1d0b9f79d283bf
     </tr>
     <tr>
         <th class="th" scope="row">문의사항</th>
@@ -119,9 +122,16 @@
 
 </table>
 
+<<<<<<< HEAD
 
 
 <script>
 
 
 </script>
+=======
+<div class="btngreen">
+    <a href="/board" class="button">글쓰기</a>
+</div>
+<!-- //Form -->
+>>>>>>> 9df26ddd832f7a249f398a50eb1d0b9f79d283bf

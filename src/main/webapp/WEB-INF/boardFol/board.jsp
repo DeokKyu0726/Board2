@@ -99,9 +99,23 @@
 
 
 </table>
+=======
+        <tbody>
+        <tr>
+            <td class="index">0</td>
+            <td class="title">게시판 제목</td>
+            <td class="name">글쓴이</td>
+            <td class="date">날짜</td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+<div class="button">
+>>>>>>> 9df26ddd832f7a249f398a50eb1d0b9f79d283bf
     <p>
         <input type="button" onclick="location.href='/boardForm'" value="글쓰기">
     </p>
+</div>
 
 <script>
         $(function () {
@@ -116,10 +130,7 @@
         });
 
         function submitc(){
-
             alert("test click");
-
-
             console.log("클릭함");
         }
 
