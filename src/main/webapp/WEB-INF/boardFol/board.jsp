@@ -48,7 +48,7 @@
     </tbody>
 </table>
     <p>
-        <input type="button" onclick="submitc()" value="글쓰기" href="/jejusi">
+        <input type="button" onclick="location.href='/boardForm'" value="글쓰기">
     </p>
 
 <script>

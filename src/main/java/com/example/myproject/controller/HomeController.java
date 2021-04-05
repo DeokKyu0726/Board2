@@ -25,6 +25,9 @@ public class HomeController {
 
     @RequestMapping("/board")
     public String board() { return "/boardFol/board"; }
+
+    @RequestMapping("/boardForm")
+    public String boardForm() { return "/boardFormFol/boardForm"; }
 }
 
 
