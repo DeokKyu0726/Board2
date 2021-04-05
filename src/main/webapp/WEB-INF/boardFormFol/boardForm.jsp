@@ -1,7 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <style>
     /* Form */
-
     .question{width:100%;border-top:2px solid #bdbdbd;border-bottom:2px solid #bdbdbd;font-family:"NanumGothic",sans-serif;}
     .question .qtit{text-align:left; margin:50px 0 10px 0;}
     .question tr{border-top:1px solid #cdcdcd;}
@@ -15,10 +14,10 @@
     .question label{margin-right:1%;}
     .question .button{margin-right:1%;line-height:12px;font-size:14px;font-family:"NanumGothic",sans-serif;background:#5e5e5e;vertical-align:middle;border:1px solid #5e5e5e;padding:1%; cursor:pointer;}
     .question .button a{color:#fff;}
-    .question .add{margin-top:1%;}
-    .question .wid10{width:10%;}
+    /*.question .add{margin-top:1%;}*/
+    /*.question .wid10{width:10%;}*/
     .question .nickname{width:49%;}
-    .question .wid30{width:30%;}
+    /*.question .wid30{width:30%;}*/
     .question .email{width:49%;}
 
     .btngreen{margin-top:30px;}
@@ -58,6 +57,6 @@
 </table>
 
 <div class="btngreen">
-    <a href="/board" class="Btn">글쓰기</a>
+    <a href="/board" class="button">글쓰기</a>
 </div>
 <!-- //Form -->

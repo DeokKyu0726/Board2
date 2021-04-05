@@ -12,7 +12,7 @@ plugins {
 
 apply plugin: 'war'
 bootWar {
-    archiveBaseName = 'board'
+    archiveBaseName = ''
     archiveFileName = 'board.war'
     archiveVersion = '1.0.0'
 }
