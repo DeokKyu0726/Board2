@@ -1,16 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jh950
-  Date: 2021-04-05
-  Time: 오후 11:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-    test for board
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
+<script src="resources/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/css/menu.css" />
+<jsp:include page="/WEB-INF/commons/menu.jsp"/>
+
+<script>
+
+    
+</script>
