@@ -51,7 +51,7 @@
     <%--    </tr>--%>
     <tr>
         <th class="th" scope="row">이메일</th>
-        <td><input type="text" id="board_email" name="board_email" placeholder="email please"></td>
+        <td><input type="email" id="board_email" name="board_email" placeholder="email please"></td>
 
     </tr>
     <tr>
@@ -70,13 +70,14 @@
 </form>
 
 <script>
+
+
     function Insert()
 
     {
 
         var insertFrm = document.insertFrm;
-
-        if( !insertFrm.board_nick.value ){
+        if( !insertFrm.board_nick.value){
             alert( "닉네임을 입력하세요" );
             insertFrm.board_nick.focus();
             return;
@@ -84,14 +85,14 @@
 
 
 
-        if( !insertFrm.board_email.value ){
+        if( !insertFrm.board_email.value){
 
             alert( "이메일을 입력하세요" );
-
             insertFrm.board_email.focus();
-
             return;
-debugger
+            if (!exptext){
+                alert( "제대로 입력하세요" );
+            }
         }
 
         if( !insertFrm.board_content.value ){
@@ -103,12 +104,27 @@ debugger
             return;
 
         }
-
-
-
-
-
         insertFrm.submit();
+    }
+    function CheckEmail(str)
+
+    {
+
+
+
+        if(!reg_email.test(str)) {
+
+            return false;
+
+        }
+
+        else {
+
+            return true;
+
+        }
 
     }
+
+
 </script>
