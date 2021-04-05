@@ -48,7 +48,7 @@
     </tbody>
 </table>
     <p>
-        <input type="button" value="글쓰기" href="/jejusi">
+        <input type="button" onclick="submitc()" value="글쓰기" href="/jejusi">
     </p>
 
 <script>
@@ -62,5 +62,14 @@
                 $('.sub_menu').removeClass("open");
             });
         });
+
+        function submitc(){
+
+            alert("test click");
+
+
+            console.log("클릭함");
+        }
+
 </script>
 
