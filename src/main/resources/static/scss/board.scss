@@ -1,3 +1,115 @@
-.sub_menu{
-  margin: auto;
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+
+.menu {
+  height: 7%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  background-color: #2991d0;
+  text-align: center;
+  vertical-align: middle;
 }
+
+
+.hamburger-icon{
+  width: 50px;
+  height: 30px;
+  position: absolute;
+  z-index: 4;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+
+  }
+
+  &__middle {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+
+  }
+}
+
+.close-icon{
+  height: 5%;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  color: white;
+  font-size: 60px;
+  display: block;
+}
+
+.sub_menu {
+  position: fixed;
+  top: 0;
+  left: -303px;
+  z-index: 4;
+  height: 100%;
+  width: 300px;
+  background-color: #2991d0;
+  text-align: center;
+  box-shadow: 0 1px 15px rgba(0,0,0,.8);
+  transition: All 0.2s ease;
+  -webkit-transition: All 0.2s ease;
+  -moz-transition: All 0.2s ease;
+  -o-transition: All 0.2s ease;
+}
+
+.sub_menu ul{
+  list-style: none;
+}
+
+.open{
+  left: 0px;
+}
+
+.fm{
+  font-size: 30px;
+  font-family: nanumgothic;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+html {
+  /* Prevent font scaling in landscape */
+  -webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
+  -moz-text-size-adjust: none; /*Firefox*/
+  -ms-text-size-adjust: none;  /*Ie*/
+  -o-text-size-adjust: none; /*old versions of Opera*/
+}
+
+body{
+  margin: 0;
+}
+
