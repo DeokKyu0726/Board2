@@ -30,7 +30,7 @@
     <caption class="qtit">기본정보</caption>
     <tr>
         <th class="th" scope="row" >닉네임</th>
-        <td><input type="text" title="닉네임" class="nickname" placeholder="닉네임을 입력하세요" />
+        <td><input type="text" title="닉네임" class="nickname" placeholder="닉네임을 입력해주세요" />
         </td>
     </tr>
 <%--    <tr>--%>
@@ -46,7 +46,7 @@
 <%--    </tr>--%>
     <tr>
         <th class="th" scope="row">이메일</th>
-        <td><input type="text" class="email" title="이메일" placeholder="email please"></td>
+        <td><input type="text" class="email" title="이메일" placeholder="이메일을 입력해주세요"></td>
     </tr>
     <tr>
         <th class="th" scope="row">문의사항</th>

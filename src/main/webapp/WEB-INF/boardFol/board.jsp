@@ -20,7 +20,7 @@
 </div>
 
 <center>
-    <table class="board" border="1">
+    <table class="board" border="0">
         <caption> 건의사항</caption>
         <colgroup>
             <col width=10%>
