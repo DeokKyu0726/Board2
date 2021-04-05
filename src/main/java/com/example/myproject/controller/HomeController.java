@@ -22,6 +22,9 @@ public class HomeController {
     public String programming() {
         return "/JejusiFol/jejusi";
     }
+
+    @RequestMapping("/board")
+    public String board() { return "/boardFol/board"; }
 }
 
 

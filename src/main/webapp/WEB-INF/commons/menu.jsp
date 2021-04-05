@@ -19,6 +19,7 @@
     <ul>
         <li><a class="fm" href="/jejusi">제주시</a></li>
         <li><a class="fm" href="/seogwipo">서귀포시</a></li>
+        <li><a class="fm" href="/board">건의사항</a></li>
     </ul>
 </div>
 
