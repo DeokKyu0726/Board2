@@ -1,5 +1,14 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 
+<%--DB import 부분--%>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import = "java.sql.Connection" %>
+<%@ page import = "java.sql.Statement" %>
+<%@ page import = "java.sql.ResultSet" %>
+<%@ page import = "java.sql.SQLException" %>
+
+
+
 <script src="resources/js/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/menu.css"/>
 
@@ -38,14 +47,57 @@
     </tr>
     </thead>
 
-    <tbody>
+
+<%--    --%>
+    <%
+        // 1. JDBC 드라이버 로딩
+        Class.forName("org.mariadb.jdbc.Driver");
+
+        Connection conn = null; // DBMS와 Java연결객체
+        Statement stmt = null; // SQL구문을 실행
+        ResultSet rs = null; // SQL구문의 실행결과를 저장
+
+        try
+        {
+            String jdbcDriver = "jdbc:mariadb://127.0.0.1/wifi";
+            String dbUser = "root";
+            String dbPass = "root";
+
+            String query = "select * from board";
+            // 2. 데이터베이스 커넥션 생성
+            conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+            // 3. Statement 생성
+            stmt = conn.createStatement();
+            // 4. 쿼리 실행
+            rs = stmt.executeQuery(query);
+            // 5. 쿼리 실행 결과 출력
+            while(rs.next())
+            {
+    %>
+
     <tr>
-        <td class="index">0</td>
-        <td class="title">게시판 제목</td>
-        <td class="name">글쓴이</td>
-        <td class="date">날짜</td>
+        <td><%= rs.getString("INX") %></td>
+        <td><%= rs.getString("CONTENT") %></td>
+        <td><%= rs.getString("ID") %></td>
+        <td><%= rs.getString("DATE") %></td>
     </tr>
-    </tbody>
+    <%
+            }
+        }catch(SQLException ex){
+            out.println(ex.getMessage());
+            ex.printStackTrace();
+        }finally{
+            // 6. 사용한 Statement 종료
+            if(rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if(stmt != null) try { stmt.close(); } catch(SQLException ex) {}
+
+            // 7. 커넥션 종료
+            if(conn != null) try { conn.close(); } catch(SQLException ex) {}
+        }
+    %>
+<%--    --%>
+
+
 </table>
     <p>
         <input type="button" onclick="location.href='/boardForm'" value="글쓰기">

@@ -1,4 +1,7 @@
-<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ page import="java.sql.*"%>
+
 <style>
     /* Form */
 
@@ -31,33 +34,94 @@
     <caption class="qtit">기본정보</caption>
     <tr>
         <th class="th" scope="row" >닉네임</th>
-        <td><input type="text" title="닉네임" class="nickname" placeholder="닉네임을 입력하세요" />
+        <td><input type="text" ID="ID" title="닉네임" class="nickname" placeholder="닉네임을 입력하세요" />
         </td>
     </tr>
-<%--    <tr>--%>
-<%--        <th class="th" scope="row">연락처</th>--%>
-<%--        <td><select lass="wid10" title="핸드폰 앞 자리 선택">--%>
-<%--            <option value="010">010</option>--%>
-<%--            <option value="011">011</option>--%>
-<%--            <option value="016">016</option>--%>
-<%--            <option value="017">017</option>--%>
-<%--            <option value="018">018</option>--%>
-<%--            <option value="019">019</option>--%>
-<%--        </select><input type="text" title="전화번호 앞" maxlength="4" lass="wid20" /><input type="text"  title="전화번호뒤" maxlength="4" lass="wid20" /></td>--%>
-<%--    </tr>--%>
+    <%--    <tr>--%>
+    <%--        <th class="th" scope="row">연락처</th>--%>
+    <%--        <td><select lass="wid10" title="핸드폰 앞 자리 선택">--%>
+    <%--            <option value="010">010</option>--%>
+    <%--            <option value="011">011</option>--%>
+    <%--            <option value="016">016</option>--%>
+    <%--            <option value="017">017</option>--%>
+    <%--            <option value="018">018</option>--%>
+    <%--            <option value="019">019</option>--%>
+    <%--        </select><input type="text" title="전화번호 앞" maxlength="4" lass="wid20" /><input type="text"  title="전화번호뒤" maxlength="4" lass="wid20" /></td>--%>
+    <%--    </tr>--%>
     <tr>
         <th class="th" scope="row">이메일</th>
-        <td><input type="text" class="email" title="이메일" placeholder="email please"></td>
+        <td><input type="text" id="EMAIL" class="email" title="이메일" placeholder="email please"></td>
     </tr>
     <tr>
         <th class="th" scope="row">문의사항</th>
         <td>
-            <textarea title="문의사항" placeholder="200자 이내(400byte)로 입력해 주세요"></textarea>
+            <textarea title="문의사항" id="CONTENT" placeholder="200자 이내(400byte)로 입력해 주세요"></textarea>
         </td>
     </tr>
+
+    <%
+
+
+
+        request.setCharacterEncoding("UTF-8"); //받아오는 값을 한글로 처리
+
+        Class.forName("org.mariadb.jdbc.Driver");
+
+        String url = "jdbc:mariadb://127.0.0.1/wifi"; // mysql 데이터베이스명
+
+        String mysql_id = "root";   // mysql id값
+
+        String mysql_pw = "root";   // mysql pw값
+
+
+
+        String ID = request.getParameter("ID");    // 넘어온 글제목 값 저장
+
+        String EMAIL = request.getParameter("EMAIL"); // 넘어온 글내용 값 저장
+
+        String CONTENT = request.getParameter("CONTENT"); // 넘어온 글내용 값 저장
+
+
+
+        try{
+
+            Connection conn = DriverManager.getConnection(url, mysql_id, mysql_pw);    // 실제 DB 연동시도
+
+
+
+            String sql = "insert into board(ID, EMAIL, CONTENT) values(?,?,?)"; // insert 쿼리문
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+
+
+            pstmt.setString(1, ID);
+            pstmt.setString(2, EMAIL);
+            pstmt.setString(3, CONTENT);
+
+
+
+            pstmt.execute();
+
+            pstmt.close();
+
+        }catch(SQLException e){
+
+            out.println(e.toString());
+
+        }
+
+    %>
+
+    <div class="btngreen">
+        <a href="/board" class="Btn">글쓰기</a>
+    </div>
+
 </table>
 
-<div class="btngreen">
-    <a href="/board" class="Btn">글쓰기</a>
-</div>
-<!-- //Form -->
+
+
+<script>
+
+
+</script>

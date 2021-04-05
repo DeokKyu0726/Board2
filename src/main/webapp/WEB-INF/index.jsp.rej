@@ -1,0 +1,128 @@
+diff a/src/main/webapp/WEB-INF/index.jsp b/src/main/webapp/WEB-INF/index.jsp	(rejected hunks)
+@@ -1,11 +1,85 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8" %>
++<%@ page import="java.sql.DriverManager" %>
++<%@ page import = "java.sql.Connection" %>
++<%@ page import = "java.sql.Statement" %>
++<%@ page import = "java.sql.ResultSet" %>
++<%@ page import = "java.sql.SQLException" %>
+ 
+ <script src="resources/js/jquery.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="/resources/css/board.css"/>
+ <jsp:include page="/WEB-INF/commons/menu.jsp"/>
+ 
++<table width = "100%" border = "1">
++    <tr>
++        <td>INX</td>
++        <td>PLACE</td>
++        <td>JEJU</td>
++        <td>JEJU_LOCATION</td>
++        <td>PURPOSE</td>
++        <td>SERVICE</td>
++        <td>ROAD_LOCATTION</td>
++        <td>ADDRESS</td>
++        <td>전화번호</td>
++        <td>위도</td>
++        <td>경도</td>
++    </tr>
+ 
+ 
++        <%
++      // 1. JDBC 드라이버 로딩
++      Class.forName("org.mariadb.jdbc.Driver");
++
++      Connection conn = null; // DBMS와 Java연결객체
++      Statement stmt = null; // SQL구문을 실행
++      ResultSet rs = null; // SQL구문의 실행결과를 저장
++
++      try
++      {
++            String jdbcDriver = "jdbc:mariadb://127.0.0.1/jeju";
++            String dbUser = "root";
++            String dbPass = "root";
++
++            String query = "select * from wifi order by INX";
++            // 2. 데이터베이스 커넥션 생성
++            conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
++            // 3. Statement 생성
++            stmt = conn.createStatement();
++            // 4. 쿼리 실행
++            rs = stmt.executeQuery(query);
++            // 5. 쿼리 실행 결과 출력
++            while(rs.next())
++            {
++%>
++
++    <tr>
++        <td><%= rs.getString("INX") %></td>
++        <td><%= rs.getString("PLACE") %></td>
++        <td><%= rs.getString("JEJU") %></td>
++        <td><%= rs.getString("JEJU_LOCATION") %></td>
++        <td><%= rs.getString("PURPOSE") %></td>
++        <td><%= rs.getString("SERVICE") %></td>
++        <td><%= rs.getString("ROAD_LOCATTION") %></td>
++        <td><%= rs.getString("ADDRESS") %></td>
++        <td><%= rs.getString("NUMBER") %></td>
++        <td><%= rs.getString("LATITUDE") %></td>
++        <td><%= rs.getString("LONGTITUDE") %></td>
++    </tr>
++    <%
++            }
++        }catch(SQLException ex){
++            out.println(ex.getMessage());
++            ex.printStackTrace();
++        }finally{
++            // 6. 사용한 Statement 종료
++            if(rs != null) try { rs.close(); } catch(SQLException ex) {}
++            if(stmt != null) try { stmt.close(); } catch(SQLException ex) {}
++
++            // 7. 커넥션 종료
++            if(conn != null) try { conn.close(); } catch(SQLException ex) {}
++        }
++    %>
++</table>
++
+ 
+ 
+ <div id="map" style="width:50%; height: 50%;">
+@@ -14,7 +88,7 @@
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR8nlPgvUI6vz1YNHIKpSBu6hj8k0HdJc&callback&callback=initMap&region=kr"></script>
+ <script>
+     function initMap() {
+-        var jeju = { lat: 33.5101562 ,lng: 126.4861157 };
++        var jejuairport = { lat: 33.5101562 ,lng: 126.4861157 };
+         var map = new google.maps.Map(
+             document.getElementById('map'), {
+                 zoom: 13,
+@@ -22,10 +96,30 @@
+             });
+ 
+         new google.maps.Marker({
+-            position:jeju,
++            position:jejuairport,
+             map : map,
+             label: "제주공항"
+         })
+ 
++
++        function setWifiData(){
++
++        }
++
++        function getData() {
++            $.ajax({
++                url: `/api/wifi`,
++                type: 'get',
++                dataType: 'json',
++                success: function (data) {
++                    console.log(data);
++                    setWifiData(data);
++
++                },
++                error: function (xhr, status, e) {
++                }
++            });
++        }
++
+     }
+ </script>
