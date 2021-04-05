@@ -35,11 +35,10 @@
         <td class="date"> 날짜</td>
     </tr>
     </tbody>
-    <p>
-        <input type="button" value="글쓰기" onclick=""
-    </p>
 </table>
-
+    <p>
+        <input type="button" value="글쓰기" href="/jejusi">
+    </p>
 
 <script>
         $(function () {
