@@ -202,15 +202,15 @@
         }),iwRemoveable = true;
 
         var infowindow = new kakao.maps.InfoWindow({
-            content: positions[i].content, // 인포윈도우에 표시할 내용
+            content: positions[i].title, // 인포윈도우에 표시할 내용
             removable : iwRemoveable
         });
 
 
 
-        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
-        kakao.maps.event.addListener(marker, 'click', makeclick(map, marker, iwContent));
+        // kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+        // kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        kakao.maps.event.addListener(marker, 'click', makeclick(map, marker, infowindow));
 
     }
 
@@ -229,9 +229,9 @@
         };
     }
     // 마커클릭 시 iwcontent 창을 보여줌니다.
-    function makeclick(map, marker, iwContent){
+    function makeclick(map, marker, infowindow){
         return function(){
-            infowindow.open(map, marker, iwContent);
+            infowindow.open(map, marker, infowindow);
         };
     }
 

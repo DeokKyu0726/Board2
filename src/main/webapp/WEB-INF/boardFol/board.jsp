@@ -43,7 +43,6 @@
         <th>번호</th>
         <th>제목</th>
         <th>글쓴이</th>
-        <th>날짜</th>
     </tr>
     </thead>
 
@@ -76,10 +75,9 @@
     %>
 
     <tr>
-        <td><%= rs.getString("INX") %></td>
-        <td><%= rs.getString("CONTENT") %></td>
-        <td><%= rs.getString("ID") %></td>
-        <td><%= rs.getString("DATE") %></td>
+        <td><%= rs.getString("board_no") %></td>
+        <td><%= rs.getString("board_content") %></td>
+        <td><%= rs.getString("board_nick") %></td>
     </tr>
     <%
             }
@@ -99,19 +97,14 @@
 
 
 </table>
-=======
+
         <tbody>
-        <tr>
-            <td class="index">0</td>
-            <td class="title">게시판 제목</td>
-            <td class="name">글쓴이</td>
-            <td class="date">날짜</td>
-        </tr>
+
         </tbody>
     </table>
 </center>
 <div class="button">
->>>>>>> 9df26ddd832f7a249f398a50eb1d0b9f79d283bf
+
     <p>
         <input type="button" onclick="location.href='/boardForm'" value="글쓰기">
     </p>
