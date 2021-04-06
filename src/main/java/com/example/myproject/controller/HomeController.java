@@ -31,6 +31,15 @@ public class HomeController {
 
     @RequestMapping("/insert")
     public String insert() { return "/boardFormFol/insert"; }
+
+    @RequestMapping("/boardup")
+    public String boardup() { return "/boardFormFol/boardupdate"; }
+
+    @RequestMapping("/proc")
+    public String proc() { return "/boardFormFol/boardupdateproc"; }
+
+    @RequestMapping("/Detail")
+    public String Detail() { return "/boardFormFol/Detail"; }
 }
 
 

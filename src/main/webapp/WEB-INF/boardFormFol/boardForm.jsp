@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ page import="java.sql.*"%>
-
+<jsp:include page="/WEB-INF/commons/submenu.jsp"/>
 <style>
     /* Form */
 
@@ -51,7 +51,7 @@
     <%--    </tr>--%>
     <tr>
         <th class="th" scope="row">이메일</th>
-        <td><input type="email" id="board_email" name="board_email" placeholder="email please"></td>
+        <td><input type="text" id="board_email" name="board_email" placeholder="email please"></td>
 
     </tr>
     <tr>

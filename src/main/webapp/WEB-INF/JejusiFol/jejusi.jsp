@@ -60,6 +60,9 @@
 
 <div id="map" style=" width:100%; height: 80%;"></div>
 
+<button onclick="setOverlayMapTypeId('traffic')">교통정보 보기</button>
+<button onclick="setOverlayMapTypeId('roadview')">로드뷰 도로정보 보기</button>
+
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=823225c9f117d22aaa31fc6556d5bca7"></script>
 
@@ -197,19 +200,27 @@
             map: map, // 마커를 표시할 지도
             position: positions[i].latlng, // 마커를 표시할 위치
             title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            image : markerImage // 마커 이미지
+            image : markerImage, // 마커 이미지
+            clickable: true
         });
+
+        var iwContent = new kakao.maps.InfoWindow({
+            content : positions[i].content// iwcontent 에 표시할 내용 (Place)
+
+        }),iwRemoveable = true;
 
         // 마커에 표시할 인포윈도우를 생성합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: positions[i].content // 인포윈도우에 표시할 내용
+            content: positions[i].title, // 인포윈도우에 표시할 내용
+            removable : iwRemoveable
         });
 
         // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
         // 이벤트 리스너로는 클로저를 만들어 등록합니다
         // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        //kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+        //kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        kakao.maps.event.addListener(marker, 'click', makeclick(map, marker, infowindow));
     }
 
     // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
@@ -225,6 +236,47 @@
             infowindow.close();
         };
     }
+    // 마커클릭 시 iwcontent 창을 보여줌니다.
+    function makeclick(map, marker, infowindow){
+        return function(){
+            infowindow.open(map, marker, infowindow);
+        };
+    }
+
+    ////////////////////////////////////////////////지도 타입////////////////////////////////////
+
+
+    // 지도에 추가된 지도타입정보를 가지고 있을 변수입니다
+    var currentTypeId;
+
+    // 버튼이 클릭되면 호출되는 함수입니다
+    function setOverlayMapTypeId(maptype) {
+        var changeMaptype;
+
+        // maptype에 따라 지도에 추가할 지도타입을 결정합니다
+        if (maptype === 'traffic') {
+
+            // 교통정보 지도타입
+            changeMaptype = kakao.maps.MapTypeId.TRAFFIC;
+
+        } else if (maptype === 'roadview') {
+            // 로드뷰 도로정보 지도타입
+            changeMaptype = kakao.maps.MapTypeId.ROADVIEW;
+        }
+
+        // 이미 등록된 지도 타입이 있으면 제거합니다
+        if (currentTypeId) {
+            map.removeOverlayMapTypeId(currentTypeId);
+        }
+
+        // maptype에 해당하는 지도타입을 지도에 추가합니다
+        map.addOverlayMapTypeId(changeMaptype);
+
+        // 지도에 추가된 타입정보를 갱신합니다
+        currentTypeId = changeMaptype;
+    }
+
+
 </script>
 
 
