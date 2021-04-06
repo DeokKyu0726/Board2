@@ -19,33 +19,7 @@
     #nav ul.city_menu li a{ color: black;}
 </style>
 
-<div id="nav" style="width:100%">
-    <ul class="city_menu">
-        <form>
-        <li><a href="#"></a>
-            <select class="sub">
-                <option><a href="#">안덕면</a></option>
-                <option><a href="#">천지동</a></option>
-                <option><a href="#">Deacheon-dong</a></option>
-                <option><a href="#">Deajeong-eub</a></option>
-                <option><a href="#">Dearyun-dong</a></option>
-                <option><a href="#">Donghong-dong</a></option>
-                <option><a href="#">Hyodon-dong</a></option>
-                <option><a href="#">Jeongbang-dong</a></option>
-                <option><a href="#">Jongang-dong</a></option>
-                <option><a href="#">Joongmoon-dong</a></option>
-                <option><a href="#">Namwon-eub</a></option>
-                <option><a href="#">Pyoseon-myun</a></option>
-                <option><a href="#">Seohong-dong</a></option>
-                <option><a href="#">Seongsan-eub</a></option>
-                <option><a href="#">Songsan-dong</a></option>
-                <option><a href="#">Yearea-dong</a></option>
-                <option><a href="#">Yeongcheon-dong</a></option>
-            </select>
-        </li>
-        </form>
-    </ul>
-</div>
+
 
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
