@@ -19,9 +19,7 @@
     #nav ul.city_menu li a{ color: black;}
 </style>
 
-<<<<<<< HEAD
 
-=======
 <%--<div id="nav" style="width:100%">--%>
 <%--    <ul class="city_menu">--%>
 <%--        <form>--%>
@@ -49,7 +47,7 @@
 <%--        </form>--%>
 <%--    </ul>--%>
 <%--</div>--%>
->>>>>>> 9cabfcb25c56e712a8bd42c48f89a9c9deed5fe0
+
 
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
