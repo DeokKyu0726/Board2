@@ -25,8 +25,7 @@
     .question .email{width:49%;}
 
     .btngreen{margin-top:30px;}
-    .btngreen a{width:8%;margin:0 auto;display:block;padding:0.7em 1.5em 0.8em 1.5em;font-size:16px;color:#fff;border:1px solid #008d2d;border-radius:2em;background:#008d2d; text-align:center;letter-spacing:-0.5px; font-weight:bold;}
-    .btngreen a:hover{background:#fff;color:#008d2d;}
+    .btngreen input{width:100%;margin:0;display:block; padding:0.7em 1.5em 0.8em 1.5em; font-size:16px; color: #ffffff; border:1px solid #415aff;border-radius:0.3em;background: #415aff; text-align:center; font-weight:bold;}
 </style>
 
 
