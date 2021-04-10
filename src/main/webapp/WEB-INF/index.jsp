@@ -73,7 +73,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="SeogwipoFol/seogwipo.html">
+            <a class="nav-link" href="/seogwiposi">
                 <i class="fas fa-fw fa-table"></i>
                 <span>서귀포시</span></a>
         </li>
@@ -110,8 +110,11 @@
         <!-- Main Content -->
         <div id="content">
 
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
             <!-- Begin Page Content -->
-
             <div id="map" style=" width:100%; height: 100%;"></div>
 
             <!-- /.container-fluid -->
