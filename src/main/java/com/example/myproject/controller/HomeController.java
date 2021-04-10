@@ -13,9 +13,9 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/seogwipo")
+    @RequestMapping("/seogwiposi")
     public String fighting() {
-        return "/SeogwipoFol/seogwipo";
+        return "/SeogwiposiFol/seogwiposi";
     }
 
     @RequestMapping("/jejusi")
