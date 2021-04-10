@@ -51,7 +51,7 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>지도</span></a>
@@ -74,7 +74,7 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="SeogwipoFol/seogwipo.html">
+            <a class="nav-link" href="/seogwiposi">
                 <i class="fas fa-fw fa-table"></i>
                 <span>서귀포시</span></a>
         </li>
@@ -88,7 +88,7 @@
         </div>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="/board">
                 <i class="fas fa-fw fa-table"></i>
                 <span>건의사항</span></a>
