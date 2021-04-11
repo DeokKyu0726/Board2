@@ -42,7 +42,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-wifi"></i>
             </div>
             <div class="sidebar-brand-text mx-3">JEJU wifi <sup>2</sup></div>
         </a>
@@ -53,7 +53,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
             <a class="nav-link" href="/">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-fw fa-map"></i>
                 <span>지도</span></a>
         </li>
 
@@ -68,14 +68,14 @@
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link" href="/jejusi">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-map-marker-alt"></i>
                 <span>제주시</span></a>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link" href="/seogwiposi">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-map-marker-alt"></i>
                 <span>서귀포시</span></a>
         </li>
 
@@ -90,7 +90,7 @@
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
             <a class="nav-link" href="/board">
-                <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-comment"></i>
                 <span>건의사항</span></a>
         </li>
 
