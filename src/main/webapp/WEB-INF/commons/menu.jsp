@@ -111,7 +111,7 @@
         <div id="content">
 
             <jsp:include page="/WEB-INF/commons/topbar.jsp"/>
-            <div id="map" style=" width:100%; height: 100%;"></div>
+            <div id="map" style="width: 100%; height: 100vh;"></div>
             <!-- Begin Page Content -->
 
             <!-- /.container-fluid -->
