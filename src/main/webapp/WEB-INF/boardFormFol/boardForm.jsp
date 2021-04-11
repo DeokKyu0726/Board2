@@ -38,14 +38,14 @@
                 <div class="col-lg-7">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            <h1 class="h4 text-gray-900 mb-4">Contact us!</h1>
                         </div>
 
                         <form class="user" name="insertFrm" id="insertFrm" action="insert">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" id="board_nick" name="board_nick"
-                                           placeholder="Nick Name">
+                                           placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -54,20 +54,20 @@
                             </div>
 
                             <div class="form-group">
-                                <textarea class="form-control form-control-lg" id="board_content" name="board_content"
-                                          placeholder="200자 이내(400byte)로 입력해 주세요..."></textarea>
+                                <textarea class="form-control form-control-sm" id="board_content" name="board_content"
+                                          placeholder="200자 이내(400byte)로 입력해 주세요..." style="height: 170px"></textarea>
                             </div>
                             <hr>
                             <input type="button" value="제출하기" href="/board" id="insert" class="btn btn-primary btn-user btn-block" OnClick="javascript:Insert();">
                         </form>
-                        <hr>
+<%--                        <hr>--%>
 
-                        <div class="text-center">
-                            <a class="small" href="forgot-password.html">Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" href="login.html">Already have an account? Login!</a>
-                        </div>
+<%--                        <div class="text-center">--%>
+<%--                            <a class="small" href="forgot-password.html">Forgot Password?</a>--%>
+<%--                        </div>--%>
+<%--                        <div class="text-center">--%>
+<%--                            <a class="small" href="login.html">Already have an account? Login!</a>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
             </div>
