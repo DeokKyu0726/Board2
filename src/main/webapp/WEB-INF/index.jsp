@@ -80,53 +80,53 @@
     // 마커를 표시할 위치와 title 객체 배열입니다
 
 
-<%--    var positions = [--%>
+    var positions = [
 
-<%--        <%--%>
-<%-- // 1. JDBC 드라이버 로딩--%>
-<%-- Class.forName("org.mariadb.jdbc.Driver");--%>
+        <%
+ // 1. JDBC 드라이버 로딩
+ Class.forName("org.mariadb.jdbc.Driver");
 
-<%-- Connection conn = null; // DBMS와 Java연결객체--%>
-<%-- Statement stmt = null; // SQL구문을 실행--%>
-<%-- ResultSet rs = null; // SQL구문의 실행결과를 저장--%>
+ Connection conn = null; // DBMS와 Java연결객체
+ Statement stmt = null; // SQL구문을 실행
+ ResultSet rs = null; // SQL구문의 실행결과를 저장
 
-<%-- try--%>
-<%-- {--%>
-<%--     String jdbcDriver = "jdbc:mariadb://127.0.0.1/wifi";--%>
-<%--     String dbUser = "root";--%>
-<%--     String dbPass = "root";--%>
+ try
+ {
+     String jdbcDriver = "jdbc:mariadb://127.0.0.1/wifi";
+     String dbUser = "root";
+     String dbPass = "root";
 
-<%--     String query = "select PLACE,LATITUDE,LONGTITUDE from seogwipo ";--%>
-<%--     // 2. 데이터베이스 커넥션 생성--%>
-<%--     conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);--%>
-<%--     // 3. Statement 생성--%>
-<%--     stmt = conn.createStatement();--%>
-<%--     // 4. 쿼리 실행--%>
-<%--     rs = stmt.executeQuery(query);--%>
-<%--     // 5. 쿼리 실행 결과 출력--%>
-<%--     while(rs.next())--%>
-<%--     {--%>
-<%--%>--%>
-<%--        {--%>
-<%--            content: '<%= rs.getString("PLACE") %>',--%>
-<%--            title: '<%= rs.getString("PLACE") %>',--%>
-<%--            latlng: new kakao.maps.LatLng(<%= rs.getString("LATITUDE") %>, <%= rs.getString("LONGTITUDE") %>)--%>
-<%--        },--%>
-<%--        <%--%>
-<%--     }--%>
-<%-- }catch(SQLException ex){--%>
-<%--     out.println(ex.getMessage());--%>
-<%--     ex.printStackTrace();--%>
-<%-- }finally{--%>
-<%--     // 6. 사용한 Statement 종료--%>
-<%--     if(rs != null) try { rs.close(); } catch(SQLException ex) {}--%>
-<%--     if(stmt != null) try { stmt.close(); } catch(SQLException ex) {}--%>
+     String query = "select PLACE,LATITUDE,LONGTITUDE from seogwipo union select PLACE,LATITUDE,LONGTITUDE from jeju ";
+     // 2. 데이터베이스 커넥션 생성
+     conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+     // 3. Statement 생성
+     stmt = conn.createStatement();
+     // 4. 쿼리 실행
+     rs = stmt.executeQuery(query);
+     // 5. 쿼리 실행 결과 출력
+     while(rs.next())
+     {
+%>
+        {
+            content: '<%= rs.getString("PLACE") %>',
+            title: '<%= rs.getString("PLACE") %>',
+            latlng: new kakao.maps.LatLng(<%= rs.getString("LATITUDE") %>, <%= rs.getString("LONGTITUDE") %>)
+        },
+        <%
+     }
+ }catch(SQLException ex){
+     out.println(ex.getMessage());
+     ex.printStackTrace();
+ }finally{
+     // 6. 사용한 Statement 종료
+     if(rs != null) try { rs.close(); } catch(SQLException ex) {}
+     if(stmt != null) try { stmt.close(); } catch(SQLException ex) {}
 
-<%--     // 7. 커넥션 종료--%>
-<%--     if(conn != null) try { conn.close(); } catch(SQLException ex) {}--%>
-<%-- }--%>
-<%--%>--%>
-<%--    ];--%>
+     // 7. 커넥션 종료
+     if(conn != null) try { conn.close(); } catch(SQLException ex) {}
+ }
+%>
+    ];
 
     // 마커 이미지의 이미지 주소입니다
     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
@@ -166,33 +166,27 @@
         return function () {
             infowindow.close();
         };
-
     }
+    
+    function search() {
+        var arr = new Array();
+        var k = 0;
+        var search_place = new String();
+        search_place = document.getElementById('search_place').value;
 
-    // 장소 검색 객체를 생성합니다
-    var ps = new kakao.maps.services.Places();
+        for (var i = 0; i < positions.length; i++) {
+            if(positions[i].title.search(search_place) == -1){
 
-    function search(){
-        alert("ok");
-        // 키워드로 장소를 검색합니다
-        ps.keywordSearch($('#search_place').value(), placesSearchCB);
-    }
-
-    // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-    function placesSearchCB (data, status, pagination) {
-        if (status === kakao.maps.services.Status.OK) {
-
-            // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-            // LatLngBounds 객체에 좌표를 추가합니다
-            var bounds = new kakao.maps.LatLngBounds();
-
-            for (var i=0; i<data.length; i++) {
-                displayMarker(data[i]);
-                bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+            } else {
+                arr[k] = positions[i].title;
+                k++;
             }
+        }
 
-            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-            map.setBounds(bounds);
+        if(k == 0){
+            alert("검색결과에 없습니다.");
+        } else{
+            alert(arr);
         }
     }
 
