@@ -128,6 +128,9 @@
 %>
     ];
 
+    //마커객체를 담을 배열 전역으로 선언.
+    var markers = [];
+
     // 마커 이미지의 이미지 주소입니다
     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
     for (var i = 0; i < positions.length; i++) {
@@ -146,6 +149,9 @@
             image: markerImage, // 마커 이미지
             clickable: true
         });
+
+        //마커객체를 배열로 저장
+        markers[i]=marker;
 
         var infowindow = new kakao.maps.InfoWindow({
             content: positions[i].content // 인포윈도우에 표시할 내용
@@ -175,23 +181,36 @@
         search_place = document.getElementById('search_place').value;
 
         if (search_place == ''){
+            //검색단어가 없다면 키워드입력 요청
             alert("키워드를 입력해주세요.");
             return 0;
+        } else{
+            //검색단어가 있다면 모든 마커 삭제
+            for(var v=0; v<markers.length; v++){
+                markers[v].setMap(null);
+            }
         }
 
         for (var i = 0; i < positions.length; i++) {
+            //검색어를 position배열에 담겨있는 title과 비교
             if(positions[i].title.search(search_place) == -1){
 
             } else {
+                //동일한 검색어가 있다면 해당 마커 지도에 나타내기.
+                markers[i].setMap(map);
                 arr[k] = positions[i].title;
                 k++;
             }
         }
 
         if(k == 0){
+            //검색결과가 없다면 다시 모든 마커 표시하기
+            for(var v=0; v<markers.length; v++){
+                markers[v].setMap(map);
+            }
             alert("검색결과에 없습니다.");
         } else{
-            alert(arr);
+            alert("공공와이파이 "+k+"개 찾았습니다.");
         }
     }
 
