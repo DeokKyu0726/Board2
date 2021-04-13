@@ -174,6 +174,11 @@
         var search_place = new String();
         search_place = document.getElementById('search_place').value;
 
+        if (search_place == ''){
+            alert("키워드를 입력해주세요.");
+            return 0;
+        }
+
         for (var i = 0; i < positions.length; i++) {
             if(positions[i].title.search(search_place) == -1){
 
