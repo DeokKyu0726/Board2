@@ -173,12 +173,15 @@
             infowindow.close();
         };
     }
-    
+
     function search() {
         var arr = new Array();
         var k = 0;
         var search_place = new String();
         search_place = document.getElementById('search_place').value;
+
+        // 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
+        var bounds = new kakao.maps.LatLngBounds();
 
         if (search_place == ''){
             //검색단어가 없다면 키워드입력 요청
@@ -186,9 +189,7 @@
             return 0;
         } else{
             //검색단어가 있다면 모든 마커 삭제
-            for(var v=0; v<markers.length; v++){
-                markers[v].setMap(null);
-            }
+            remove_markers();
         }
 
         for (var i = 0; i < positions.length; i++) {
@@ -198,6 +199,9 @@
             } else {
                 //동일한 검색어가 있다면 해당 마커 지도에 나타내기.
                 markers[i].setMap(map);
+
+                //보여주고싶은 마커의 위도경도정보를 지도범위를 재설정할 bounds객체에 담는다.
+                bounds.extend(positions[i].latlng);
                 arr[k] = positions[i].title;
                 k++;
             }
@@ -205,15 +209,26 @@
 
         if(k == 0){
             // 검색결과가 없다면 다시 모든 마커 표시하기
-            for(var v=0; v<markers.length; v++){
-                markers[v].setMap(map);
-            }
+            add_markers();
             alert("검색결과에 없습니다.");
         } else{
+            //지도 범위 재설정 및 와이파이 갯수 알림
+            map.setBounds(bounds);
             alert("공공와이파이를 "+k+"개 찾았습니다.");
         }
     }
 
+    function remove_markers(){
+        for(var v=0; v<markers.length; v++){
+            markers[v].setMap(null);
+        }
+    }
+
+    function add_markers(){
+        for(var v=0; v<markers.length; v++){
+            markers[v].setMap(map);
+        }
+    }
 </script>
 
 
