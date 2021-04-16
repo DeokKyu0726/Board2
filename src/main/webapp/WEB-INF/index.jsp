@@ -150,11 +150,18 @@
         //마커객체를 배열로 저장
         markers[i]=marker;
 
+        var iwContent = new kakao.maps.InfoWindow({
+            content : positions[i].content// iwcontent 에 표시할 내용 (Place)
+        }),iwRemoveable = true;
+
         var infowindow = new kakao.maps.InfoWindow({
-            content: positions[i].content // 인포윈도우에 표시할 내용
+            content: positions[i].title, // 인포윈도우에 표시할 내용
+            removable : iwRemoveable
         });
-        kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
-        kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+        // kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+        // kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+        kakao.maps.event.addListener(marker, 'click', makeclick(map, marker, infowindow));
     }
 
     // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
@@ -168,6 +175,13 @@
     function makeOutListener(infowindow) {
         return function () {
             infowindow.close();
+        };
+    }
+
+    // 마커클릭 시 iwcontent 창을 보여줌니다.
+    function makeclick(map, marker, infowindow){
+        return function(){
+            infowindow.open(map, marker, infowindow);
         };
     }
 </script>
