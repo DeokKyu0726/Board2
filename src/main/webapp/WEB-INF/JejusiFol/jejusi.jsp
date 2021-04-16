@@ -127,7 +127,8 @@
 
     ];
 
-
+    //마커객체를 담을 배열 전역으로 선언.
+    var markers = [];
 
     // 마커 이미지의 이미지 주소입니다
     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
@@ -148,6 +149,9 @@
             image : markerImage, // 마커 이미지
             clickable: true
         });
+
+        //마커객체를 배열로 저장
+        markers[i]=marker;
 
         var iwContent = new kakao.maps.InfoWindow({
             content : positions[i].content// iwcontent 에 표시할 내용 (Place)
@@ -224,4 +228,6 @@
 
 </script>
 
+<%--검색함수 연결--%>
+<jsp:include page="/WEB-INF/commons/search.jsp"/>
 
